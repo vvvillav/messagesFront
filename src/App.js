@@ -20,10 +20,16 @@ function App() {
   }
 
   function send(text){
-    axios.post('http://localhost:3001/messages', {body: text}).then((response)=>{
-      console.log(response.data)
-      queryData()
-    });
+    if(body==''){
+      alert("Por favor, ingresar texto.");
+    }
+    else{
+      axios.post('http://localhost:3001/messages', {body: text}).then((response)=>{
+        console.log(response.data)
+        queryData()
+        setBody('');
+      });
+    }
   }
 
 
@@ -39,7 +45,7 @@ function App() {
        </div>
        <div className="List">
          {messages.map((item)=>{
-           return <Item body={item.body} date={item.date.split("T")[0]}/>
+           return <Item key={item.id} body={item.body} date={item.date.split("T")[0]}/>
          })}
        </div>
     </div>
