@@ -1,0 +1,23 @@
+.Items{
+    background-color: #FEC5FF;
+    width: 30vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.body{
+    color: #891B77;
+    font-weight: bold;
+}
+
+.date{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #891B77;
+}
